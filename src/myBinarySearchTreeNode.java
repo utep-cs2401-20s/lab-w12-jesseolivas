@@ -96,26 +96,33 @@ class myBinarySearchTreeNode{
     // Iterator for depth
     int d = 0;
 
-    // Check for a left node to be present
-    if(left != null){
+    // if search less than myValue, continue to left and iterate
+    if(search < myValue){
 
-      // Left node present, if search less than myValue, continue to left and iterate
-      if(search < myValue){
-        d = left.depth(search) +1;
+      // Check for a left node to be present
+      if(left != null){
+        if (left.depth(search) == -1){
+          return -1;
+        }
+        return d + left.depth(search) +1;
       }
     }
 
-    // Check for a right node to be present
-    else if(right != null){
 
-      // Right node present, if search greater than myValue, continue to right and iterate
-      if(search > myValue){
-        d = right.depth(search) +1;
+    // if search greater than myValue, continue to right and iterate
+    if(search > myValue){
+
+      // Check for a right node to be present
+      if(right != null){
+        if (right.depth(search) == -1){
+          return -1;
+        }
+        return d + right.depth(search) +1;
       }
     }
 
     // If search value found return 0 + all the other iterations, and you're done
-    else if(search == myValue){
+    if(search == myValue){
       return d;
     }
 
