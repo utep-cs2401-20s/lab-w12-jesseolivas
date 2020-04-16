@@ -17,11 +17,11 @@ class myBinarySearchTreeNode{
     /// by inserting elements into the tree in the order they are given in A.
 
     // Creates a new node of type myBinarySearchTreeNode
-    myBinarySearchTreeNode tree = new myBinarySearchTreeNode(A[0]);
+    myValue = A[0];
 
     // Fills up tree with the values from given array A
     for(int i = 1; i < A.length; i++){
-      tree.insert(A[i]);
+      insert(A[i]);
     }
 
   }
@@ -148,5 +148,5 @@ class myBinarySearchTreeNode{
     if(left != null) left.print(prefix + "\u251C ");
     if(right != null) right.print(prefix + "\u2514 ");
   }
-  
+
 } 
